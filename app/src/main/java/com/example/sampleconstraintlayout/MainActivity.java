@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             if (nama.equals(email) && (password.equals(psw))){
                 //menampilkan login sukses
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Login Success",Toast.LENGTH_LONG);
+                        "Login Success"+"\n\nEmail: "+nama+"\nPassword: "+password,Toast.LENGTH_LONG);
 
                 //display toast-nya
                 toast.show();
