@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             password = edpassword.getText().toString();
 
             String email = "jeykey97@mail.com";
-            String psw = "mantapjiwa1";
+            String psw = "jjk1";
 
             if (nama.equals(email) && (password.equals(psw))){
                 //menampilkan login sukses
@@ -46,6 +46,21 @@ public class MainActivity extends AppCompatActivity {
                         "Login Success",Toast.LENGTH_LONG);
 
                 //display toast-nya
+                toast.show();
+            }
+            else if (!nama.equals(email) && password.equals(psw)){
+                Toast toast = Toast.makeText(getApplicationContext(), "Wrong Email :(", Toast.LENGTH_LONG);
+
+                toast.show();
+            }
+            else if (nama.equals(email) && !password.equals(psw)){
+                Toast toast = Toast.makeText(getApplicationContext(), "Wrong Password :(", Toast.LENGTH_LONG);
+
+                toast.show();
+            }
+            else{
+                Toast toast = Toast.makeText(getApplicationContext(), "Wrong Email and Password", Toast.LENGTH_LONG);
+
                 toast.show();
             }
 
