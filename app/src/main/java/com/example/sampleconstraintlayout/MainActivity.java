@@ -37,12 +37,18 @@ public class MainActivity extends AppCompatActivity {
             //menyimpan input user di edittext password ke dalam variable password
             password = edpassword.getText().toString();
 
-            //membuat variable toast dan membuat toast dengan menambahkan variable nama dan password
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "email anda: "+nama+" dan Password anda: "+password+"", Toast.LENGTH_LONG);
+            String email = "jeykey97@mail.com";
+            String psw = "mantapjiwa1";
 
-            //menampilkan toast
-            toast.show();
+            if (nama.equals(email) && (password.equals(psw))){
+                //menampilkan login sukses
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Login Success",Toast.LENGTH_LONG);
+
+                //display toast-nya
+                toast.show();
+            }
+
         }
     });
     }
