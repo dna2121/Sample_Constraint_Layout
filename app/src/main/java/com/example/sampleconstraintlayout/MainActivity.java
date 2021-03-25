@@ -2,6 +2,7 @@ package com.example.sampleconstraintlayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,33 +38,62 @@ public class MainActivity extends AppCompatActivity {
             //menyimpan input user di edittext password ke dalam variable password
             password = edpassword.getText().toString();
 
+            //set email and password
             String email = "jeykey97@mail.com";
             String psw = "jjk1";
 
-            if (nama.equals(email) && (password.equals(psw))){
-                //menampilkan login sukses
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Login Success"+"\n\nEmail: "+nama+"\nPassword: "+password,Toast.LENGTH_LONG);
-
-                //display toast-nya
-                toast.show();
-            }
-            else if (!nama.equals(email) && password.equals(psw)){
-                Toast toast = Toast.makeText(getApplicationContext(), "Wrong Email :(", Toast.LENGTH_LONG);
+            if (nama.isEmpty() || password.isEmpty()){
+                Toast toast = Toast.makeText(getApplicationContext(), "Email dan password wajib diisi!", Toast.LENGTH_LONG);
 
                 toast.show();
-            }
-            else if (nama.equals(email) && !password.equals(psw)){
-                Toast toast = Toast.makeText(getApplicationContext(), "Wrong Password :(", Toast.LENGTH_LONG);
+            } else {
+                if (nama.equals(email) && (password.equals(psw))){
+                    //menampilkan login sukses & membuat variable toast
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Login Success",Toast.LENGTH_LONG);
 
-                toast.show();
-            }
-            else{
-                Toast toast = Toast.makeText(getApplicationContext(), "Wrong Email and Password", Toast.LENGTH_LONG);
+                    //display toast-nya
+                    toast.show();
 
-                toast.show();
-            }
+                    //membuat objek Bundle
+                    Bundle b = new Bundle();
 
+                /*memasukkan value dari variable nama dengan kunci 'a'
+                dan dimasukkan ke dalam bundle*/
+                    b.putString("a", nama.trim());
+
+                /*memasukkan value dari variable password dengan kunci 'b'
+                dan dimasukkan ke dalam bundle
+                 */
+                    b.putString("b", password.trim());
+
+                    //membuat object intent berpindah ke activity dari mainActivity ke ActivityHasil
+                    Intent i = new Intent(getApplicationContext(), Activity_Hasil.class);
+
+                    //memasukkan bundle ke dalam intent untuk dikirimkan ke ActivityHasil
+                    i.putExtras(b);
+
+                    //berpindah ke ActivityHasil
+                    startActivity(i);
+
+                }
+                else if (!nama.equals(email) && password.equals(psw)){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Wrong Email :(", Toast.LENGTH_LONG);
+
+                    toast.show();
+                }
+                else if (nama.equals(email) && !password.equals(psw)){
+                    Toast toast = Toast.makeText(getApplicationContext(), "Wrong Password :(", Toast.LENGTH_LONG);
+
+                    toast.show();
+                }
+                else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Wrong Email and Password", Toast.LENGTH_LONG);
+
+                    toast.show();
+                }
+
+            }
         }
     });
     }
