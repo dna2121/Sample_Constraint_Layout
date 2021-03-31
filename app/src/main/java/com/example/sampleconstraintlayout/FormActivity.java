@@ -23,6 +23,13 @@ public class FormActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
 
+        fab = findViewById(R.id.fabSimpan);
+        edtNama = findViewById(R.id.edNama);
+        edtAlamat = findViewById(R.id.edAlamat);
+        edtEmail = findViewById(R.id.edEmail);
+        edtPass = findViewById(R.id.edPass);
+        edtRepass = findViewById(R.id.edrepas);
+
         //method untuk floating button
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
