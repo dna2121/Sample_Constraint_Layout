@@ -25,7 +25,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //membuat kondisi jika yang dipilih adalah id mnDaftar
+        if(item.getItemId() == R.id.mnDaftar){
+            //method untuk memanggil activity 'Daftar Activity'
+            Intent i = new Intent(getApplicationContext(), FormActivity.class);
+            startActivity(i);
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
