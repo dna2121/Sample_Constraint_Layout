@@ -1,9 +1,12 @@
 package com.example.sampleconstraintlayout;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +16,16 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogin; //deklarasi variable untuk button
     EditText edemail, edpassword; //deklarasi variable untuk edittext
     String nama, password; //deklarasi variable untuk menyimpan email dan password
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,5 +109,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     });
+
+
     }
 }

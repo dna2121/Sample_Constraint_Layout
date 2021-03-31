@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity_Hasil"
-            android:parentActivityName=".MainActivity"
-            android:label="@string/label2"></activity>
+        <activity android:name=".FormActivity"></activity>
+        <activity
+            android:name=".Activity_Hasil"
+            android:label="@string/label2"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ActivityKedua"
             android:label="@string/label2"
