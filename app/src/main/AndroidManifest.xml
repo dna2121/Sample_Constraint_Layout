@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FormActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Activity_Lihat_Data"
+            android:parentActivityName=".Home_Activity"></activity>
+        <activity android:name=".Home_Activity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".FormActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Activity_Hasil"
             android:label="@string/label2"
@@ -22,6 +27,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
